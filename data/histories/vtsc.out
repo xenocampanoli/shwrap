@@ -1,0 +1,9 @@
+Run options: --seed 9877
+
+# Running tests:
+
+.............................................................
+
+Finished tests in 47.802243s, 1.2761 tests/s, 4.6232 assertions/s.
+
+61 tests, 221 assertions, 0 failures, 0 errors, 0 skips

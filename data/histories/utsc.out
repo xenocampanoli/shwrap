@@ -1,0 +1,18 @@
+Run options: --seed 61074
+
+# Running tests:
+
+.......................................................E.....
+
+Finished tests in 359.044410s, 0.1699 tests/s, 0.5431 assertions/s.
+
+  1) Error:
+test_0005_should_provide_a_the_counts_without_filenames_from_a_stream_(unix commands work fine.::test wc command):
+Timeout::Error: execution expired
+    /home/xeno/shop/flatshop/shwrap/rblib/Shwrap.rb:272:in `shwrapCap'
+    /home/xeno/shop/flatshop/shwrap/rblib/Shwrap.rb:401:in `block in initialize'
+    /home/xeno/shop/flatshop/shwrap/rblib/Shwrap.rb:400:in `initialize'
+    user_test_shell_cmds.rb:479:in `new'
+    user_test_shell_cmds.rb:479:in `block (3 levels) in <main>'
+
+61 tests, 195 assertions, 0 failures, 1 errors, 0 skips

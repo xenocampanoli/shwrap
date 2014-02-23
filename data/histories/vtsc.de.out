@@ -1,0 +1,17 @@
+Run options: --seed 48432
+
+# Running tests:
+
+...............F....................F.......................
+
+Finished tests in 41.089650s, 1.4602 tests/s, 5.1351 assertions/s.
+
+  1) Failure:
+test_0001_should_show_the_head_or_start_of_a_file_(unix commands work fine.::test head command) [vbx_test_shell_cmds.rb:173]:
+Expected "" to not be empty.
+
+  2) Failure:
+test_0001_should_show_the_tail_end_of_a_file_(unix commands work fine.::test tail command) [vbx_test_shell_cmds.rb:346]:
+Expected "" to not be empty.
+
+60 tests, 211 assertions, 2 failures, 0 errors, 0 skips

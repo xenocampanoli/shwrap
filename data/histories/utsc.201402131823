@@ -1,0 +1,119 @@
+Run options: --seed 15112
+
+# Running tests:
+
+"ssh xeno@204.122.16.5 'ps | awk \"{print \\$1}\"'"
+trace hc:  ssh xeno@204.122.16.5 'ps | awk "{print \$1}"'
+."ssh xeno@204.122.16.5 'cksum /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'cksum /etc/hosts'
+."ssh xeno@204.122.16.5 'curl http://www.google.com'"
+trace hc:  ssh xeno@204.122.16.5 'curl http://www.google.com'
+."ssh xeno@204.122.16.5 'date +Y'"
+trace hc:  ssh xeno@204.122.16.5 'date +Y'
+F"ssh xeno@204.122.16.5 'df'"
+trace hc:  ssh xeno@204.122.16.5 'df'
+"ssh xeno@204.122.16.5 'df -P'"
+trace hc:  ssh xeno@204.122.16.5 'df -P'
+"ssh xeno@204.122.16.5 'df / | grep -v Filesystem | awk '{print $2}''"
+trace hc:  ssh xeno@204.122.16.5 'df / | grep -v Filesystem | awk '{print $2}''
+F"ssh xeno@204.122.16.5 'dmesg'"
+trace hc:  ssh xeno@204.122.16.5 'dmesg'
+."ssh xeno@204.122.16.5 'du -s /etc'"
+trace hc:  ssh xeno@204.122.16.5 'du -s /etc'
+F"ssh xeno@204.122.16.5 'env'"
+trace hc:  ssh xeno@204.122.16.5 'env'
+F"ssh xeno@204.122.16.5 'file /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'file /etc/hosts'
+F"ssh xeno@204.122.16.5 'find /etc -name hosts 2>/dev/null'"
+trace hc:  ssh xeno@204.122.16.5 'find /etc -name hosts 2>/dev/null'
+"ssh xeno@204.122.16.5 'find /dev -type b'"
+trace hc:  ssh xeno@204.122.16.5 'find /dev -type b'
+F"ssh xeno@204.122.16.5 'ls $(find /dev -type c 2>/dev/null) | wc -l'"
+trace hc:  ssh xeno@204.122.16.5 'ls $(find /dev -type c 2>/dev/null) | wc -l'
+E"ssh xeno@204.122.16.5 'free'"
+trace hc:  ssh xeno@204.122.16.5 'free'
+."ssh xeno@204.122.16.5 'free | grep Mem: | awk '{print $3}''"
+trace hc:  ssh xeno@204.122.16.5 'free | grep Mem: | awk '{print $3}''
+F..."ssh xeno@204.122.16.5 'head messages'"
+trace hc:  ssh xeno@204.122.16.5 'head messages'
+....."ssh xeno@204.122.16.5 'ls /tmp/shwraptestdir'"
+trace hc:  ssh xeno@204.122.16.5 'ls /tmp/shwraptestdir'
+."ssh xeno@204.122.16.5 'touch /tmp/shwraptestdir/ls.lst'"
+trace hc:  ssh xeno@204.122.16.5 'touch /tmp/shwraptestdir/ls.lst'
+"ssh xeno@204.122.16.5 'ls -al /tmp/shwraptestdir >/tmp/shwraptestdir/ls.lst'"
+trace hc:  ssh xeno@204.122.16.5 'ls -al /tmp/shwraptestdir >/tmp/shwraptestdir/ls.lst'
+....................."ssh xeno@204.122.16.5 'timeout 1 sleep 2; echo $?'"
+trace hc:  ssh xeno@204.122.16.5 'timeout 1 sleep 2; echo $?'
+"ssh xeno@204.122.16.5 'timeout 3 sleep 2; echo $?'"
+trace hc:  ssh xeno@204.122.16.5 'timeout 3 sleep 2; echo $?'
+.............."ssh xeno@204.122.16.5 'vmstat'"
+trace hc:  ssh xeno@204.122.16.5 'vmstat'
+."ssh xeno@204.122.16.5 'wc -w /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'wc -w /etc/hosts'
+."ssh xeno@204.122.16.5 'wc -c /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'wc -c /etc/hosts'
+."ssh xeno@204.122.16.5 'wc -l /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'wc -l /etc/hosts'
+."ssh xeno@204.122.16.5 'wc /etc/hosts'"
+trace hc:  ssh xeno@204.122.16.5 'wc /etc/hosts'
+F"ssh xeno@204.122.16.5 'echo test | wc'"
+trace hc:  ssh xeno@204.122.16.5 'echo test | wc'
+F"ssh xeno@204.122.16.5 'wget -o /tmp/wgettest.log -O /tmp/wgettest.html http://www.google.com'"
+trace hc:  ssh xeno@204.122.16.5 'wget -o /tmp/wgettest.log -O /tmp/wgettest.html http://www.google.com'
+."ssh xeno@204.122.16.5 'which which'"
+trace hc:  ssh xeno@204.122.16.5 'which which'
+."ssh xeno@204.122.16.5 'whoami'"
+trace hc:  ssh xeno@204.122.16.5 'whoami'
+."ssh xeno@204.122.16.5 'find /etc -type f -name '*host*' -print | xargs grep host'"
+trace hc:  ssh xeno@204.122.16.5 'find /etc -type f -name '*host*' -print | xargs grep host'
+.E
+
+Finished tests in 22.757873s, 2.9880 tests/s, 3.1198 assertions/s.
+
+  1) Failure:
+test_0001_should_give_you_date_time_information_in_a_wide_range_of_formats_(unix commands work fine.::test date command) [user_test_shell_cmds.rb:66]:
+Expected /^\d{4}$/ to match "Y\n".
+
+  2) Failure:
+test_0001_should_print_space_usage_for_filesystems_(unix commands work fine.::test df command) [user_test_shell_cmds.rb:85]:
+Expected /^\d+$/ to match "".
+
+  3) Failure:
+test_0001_should_give_you_disk_usage_information_for_a_path_(unix commands work fine.::test du command) [user_test_shell_cmds.rb:100]:
+Expected /^\d{4}$/ to match "51956\t/etc\n".
+
+  4) Failure:
+test_0001_should_give_you_a_list_of_defined_shell_environment_identifiers_(unix commands work fine.::test env command) [user_test_shell_cmds.rb:107]:
+Expected /DISPLAY=/ to match "MANPATH=/usr/share/man:/usr/man:/usr/local/man:/usr/openwin/man:/usr/X11R6/man:/usr/local/gnu/man:/usr/local/lib/perl5/man\nGEM_HOME=/home/xeno/nosebagadmin/mygems\nTERM=vt100\nSHELL=/bin/bash\nSSH_CLIENT=208.185.201.186 52060 22\nUSER=xeno\nMAIL=/var/mail/xeno\nPATH=/usr/local/bin:/bin:/usr/bin:/home/xeno/gems/bin\nPWD=/home/xeno\nLANG=en_US.UTF-8\nSHLVL=1\nHOME=/home/xeno\nLOGNAME=xeno\nGEM_PATH=/home/xeno/nosebagadmin/mygems:/usr/lib/ruby/gems/1.8/\nSSH_CONNECTION=208.185.201.186 52060 204.122.16.5 22\n_=/bin/env\n".
+
+  5) Failure:
+test_0001_should_provide_simple_information_about_the_file_(unix commands work fine.::test file command) [user_test_shell_cmds.rb:122]:
+Expected /^\/etc\/hosts\s+ASCII text$/ to match "/etc/hosts: ASCII English text\n".
+
+  6) Failure:
+test_0001_should_look_up_sets_of_files_from_a_directory_tree_(unix commands work fine.::test find command) [user_test_shell_cmds.rb:131]:
+Expected 361 (Fixnum) to respond to #empty?.
+
+  7) Error:
+test_0002_should_allow_other_commands_to_access_files_from_a_directory_tree_(unix commands work fine.::test find command):
+NameError: undefined local variable or method `to3' for #<#<Class:0x000000010f5ef0>:0x00000000b50fb8>
+    user_test_shell_cmds.rb:137:in `block (3 levels) in <main>'
+
+  8) Failure:
+test_0002_should_provide_memory_and_virtual_memory_information_(unix commands work fine.::test free command) [user_test_shell_cmds.rb:148]:
+Expected /^\d+$/ to match "".
+
+  9) Failure:
+test_0001_should_provide_a_count_of_characters_words_and_lines_(unix commands work fine.::test wc command) [user_test_shell_cmds.rb:376]:
+Expected /^\d+\s+\d+\s+\d+\s+\/etc\/hosts$/ to match " 22  77 859 /etc/hosts\n".
+
+ 10) Failure:
+test_0005_should_provide_a_the_counts_without_filenames_from_a_stream_(unix commands work fine.::test wc command) [user_test_shell_cmds.rb:392]:
+Expected /^1\s+1\s+5$/ to match "      1       1       5\n".
+
+ 11) Error:
+test_0001_should_write_the_specified_string_continuously_until_killed_(unix commands work fine.::test yes command):
+NameError: uninitialized constant ALTO
+    user_test_shell_cmds.rb:427:in `block (3 levels) in <main>'
+
+68 tests, 71 assertions, 9 failures, 2 errors, 0 skips

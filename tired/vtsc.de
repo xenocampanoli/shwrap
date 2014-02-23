@@ -1,0 +1,13 @@
+Run options: --seed 30852
+
+# Running tests:
+
+............F...............................................
+
+Finished tests in 43.550768s, 1.3777 tests/s, 4.7990 assertions/s.
+
+  1) Failure:
+test_0001_should_filter_text_for_a_string_(unix commands work fine.::test grep command) [vbx_test_shell_cmds.rb:150]:
+Expected 0 to be > 0.
+
+60 tests, 209 assertions, 1 failures, 0 errors, 0 skips

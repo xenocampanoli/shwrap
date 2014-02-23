@@ -1,0 +1,6 @@
+	1.	Save file artifacts using time/label mechanisms.
+	2.  Save command histories using class variable that is an array.
+	3.	Before / After Command tests.
+	4.  Log Tail tests.
+	5.  Tests for sudo mode.
+	6.	Look at implementations in other languages, including Python, Capistrano, Elixir, Bash.
